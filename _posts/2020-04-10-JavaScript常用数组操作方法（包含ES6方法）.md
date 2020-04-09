@@ -333,3 +333,21 @@ var a = [1, 2, 3];
 a.includes(2); // true
 a.includes(4); // false
 ```
+##### 11、reduce
+reduce() 方法接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值。reduce() 方法接受四个参数：初始值（或者上一次回调函数的返回值），当前元素值，当前索引，调用 reduce() 的数组。
+
+reduce() 的几个强大用法：
+数组求和
+```javascript
+var total = [ 0, 1, 2, 3 ].reduce(( acc, cur ) => {
+    return acc + cur
+}, 0);
+console.log(total)   // 6
+```
+二维数组转为一维数组
+```javascript
+var array = [[1, 2], [3, 4], [5, 6]].reduce(( acc, cur ) => {
+    return acc.concat(cur)
+}, []);
+console.log(array)  // [ 0, 1, 3, 4, 5, 6 ]
+```
